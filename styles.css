@@ -9,7 +9,7 @@ body{
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
-.title, .addDancerButton{
+.title, .dance-button{
   padding:5px 12px;
   float:right;
 }
@@ -21,7 +21,13 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
-  position:absolute;
+  color: red;
+  border: 10px solid;
+  border-radius: 10px;
+  position: absolute;
+}
+.innerbox{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
 }
