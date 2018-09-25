@@ -20,30 +20,30 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   // this one sets the position to some random default point within the body
 };
 
-var Dancer = function(top, left, timeBetweenSteps){
-  this.$node = $('<span class="dancer"></span>');
+var Dancer = function(top, left, timeBetweenSteps) {
+  this.$node = $('<span class="dancer"><i class="popFather"><span class="pop"></i></span></span>');
   this.step();
   this.setPosition(top, left);
   // debugger;
   this.timeBetweenSteps = timeBetweenSteps;
 };
 
-Dancer.prototype.step = function(argument){
+Dancer.prototype.step = function(argument) {
  
   var self = this;
-  setTimeout(
-    function(){
-      self.step();
-    }, this.timeBetweenSteps);
+  setTimeout(function() { self.step(); }, this.timeBetweenSteps);
 
-  //setTimeout(function(){this.step();}, this.timeBetweenSteps);
+  //setTimeout(function() { this.step(); }, this.timeBetweenSteps);
 };
 
-Dancer.prototype.setPosition = function(top, left){
+Dancer.prototype.setPosition = function(top, left) {
 
   var styleSettings = {
-      top: top,
-      left: left
-    };
+    top: top,
+    left: left,
+    'border': '10px solid',
+    'border-radius': '10px',
+    'color': 'red'
+  };
   this.$node.css(styleSettings);
 };

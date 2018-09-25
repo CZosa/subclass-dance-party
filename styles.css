@@ -21,13 +21,52 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  color: red;
-  border: 10px solid;
-  border-radius: 10px;
   position: absolute;
+  transition: 3s;
+  width: 100px;
+  height: 100px;
+  display: block;
+  background-image: url('http://www.2kratings.com/wp-content/uploads/Michael-Jordan-Team-USA.png');  /*http://www.stickpng.com/img/memes/mixed-memes/michael-jordan-crying-face*/
+  background-size: cover;
+  background-position: center;
 }
 .innerbox{
   width: 100vw;
   height: 100vh;
   position: relative;
+}
+.nav{
+  text-align: center;
+}
+.lineUp{
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border-radius: 0.5em;
+  margin-top: 1em;
+}
+.bottom-bar{
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding: 2em;
+  width: 100%;
+}
+.close{
+  padding: 0.5em 1em;
+  font-size: 1em;
+  border-radius: 10px;
+}
+.popFather{
+  position: relative;
+}
+.pop{
+  display: none;
+  background: #fff;
+  border: 3px solid #fff;
+  border-radius: 10px;
+  color: #000;
+  font-size: 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
