@@ -21,7 +21,7 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
 };
 
 var Dancer = function(top, left, timeBetweenSteps) {
-  this.$node = $('<span class="dancer"><i class="popFather"><span class="pop">````</span></i></span>');
+  this.$node = $('<span class="dancer"><i class="popFather"><span class="pop"></span></i></span>');
   this.step();
   this.setPosition(top, left);
   // debugger;

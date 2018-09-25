@@ -54,3 +54,43 @@ var pythagorean = function(dan1, dan2) {
 
     return Math.sqrt(Math.pow(Math.abs(dancerOneLeft - dancerTwoLeft), 2) + Math.pow(Math.abs(dancerOneTop - dancerTwoTop), 2));
 };
+
+
+var change = {
+  37: {
+    left: "-=2"
+  },
+
+  38: {
+    top: "-=2"
+  },
+
+  39: {
+    left: "+=2"
+  },
+
+  40: {
+    top: "+=2"
+  },
+};
+
+$(document).one("keydown", keyDown)
+
+var going;
+
+function keyDown(e) {
+  $(document).one("keyup", keyup)
+  var animation = change[e.which];
+  going = setInterval(keepGoing, 1);
+
+  function keepGoing() {
+    $(".ball").css(animation)
+  }
+
+}
+
+function keyup(e) {
+  console.log("up")
+  clearInterval(going)
+  $(document).one("keydown", keyDown)
+}

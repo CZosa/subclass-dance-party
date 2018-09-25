@@ -93,3 +93,13 @@ body, a:link, a:visited, a:active{
     right: -20px;
     z-index: 0;
 }
+.ball{
+  position: absolute;
+  left: 30px;
+  top: 40px;
+  width: 150px;
+  height: 150px;
+  background-image: url(img/ball.png);
+  background-size: cover;
+  background-position: center;
+}

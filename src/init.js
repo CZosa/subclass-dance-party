@@ -73,7 +73,6 @@ $(document).ready(function() {
   });
 
 
-
   $('.lineUp').on('click', function(e) {
     // var style = {'transition': '0', 'left': '80%'};
     // $('.dancer').css(style);
@@ -82,9 +81,10 @@ $(document).ready(function() {
       var dancer = dancerArr[i].$node;
       goLeft(dancer);
     }
-    
+    console.log('clicked audio');
+    document.getElementsByTagName('audio')[0].play();
   });
-  
+
   $('.close').on('click', function(e) {
     if(window.dancers.length > 1) {
       var wholeArr = dancerDistance(window.dancers);
