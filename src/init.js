@@ -32,6 +32,7 @@ $(document).ready(function() {
     window.dancers.push(dancer);
     // console.log(dancer.$node);
     console.log('Here comes a new Dancer');
+
   });
 
   
@@ -82,6 +83,35 @@ $(document).ready(function() {
       goLeft(dancer);
     }
     
+  });
+  
+  $('.close').on('click', function(e) {
+    if(window.dancers.length > 1) {
+      var wholeArr = dancerDistance(window.dancers);
+      var pairs = closestPair(wholeArr);
+      var one = pairs.pair[0].$node;
+      var two = pairs.pair[1].$node;
+      // console.log(one);
+      var whiten = {'border-color': 'white'};
+      one.css(whiten);
+      two.css(whiten);
+      alert('The closest two became white!');
+    } else { 
+      alert('There is zero or one node here!');
+    }
+  });
+  
+  $('.topbar').on('click', function(e) {
+    $('.dancer').mouseover(function() {
+      console.log('mouseover');
+      $( this ).find( 'span.pop' ).show();
+      $( this ).find( 'span.pop' ).text( 'PUT OFF' );
+    });
+
+    $('.dancer').mouseleave(function() {
+      console.log('mouseleave');
+      $( this ).find( 'span.pop' ).hide();
+    });
   });
   
 });

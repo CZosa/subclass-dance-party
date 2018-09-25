@@ -31,10 +31,11 @@
   var closestPair = function(array) {
     
     var result = array[0];
+    var least = array[0].distance;
     
     for (var i = 1; i < array.length; i++) {
-      var least = array[0].distance;
       if (least > array[i].distance) {
+      	least = array[i].distance;
         result = array[i];
       }
     }
