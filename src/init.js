@@ -95,9 +95,9 @@ $(document).ready(function() {
       var whiten = {'border-color': 'white'};
       one.css(whiten);
       two.css(whiten);
-      alert('The closest two became white!');
+      alert('The closest two nodes will whiten!');
     } else { 
-      alert('There is zero or one node here!');
+      alert('There is zero or only one node here!');
     }
   });
   
