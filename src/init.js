@@ -95,7 +95,7 @@ $(document).ready(function() {
       var whiten = {'border-color': 'white'};
       one.css(whiten);
       two.css(whiten);
-      alert('The closest two nodes will whiten!');
+      alert('The closest two nodes will be whiten up!');
     } else { 
       alert('There is zero or only one node here!');
     }
@@ -104,13 +104,13 @@ $(document).ready(function() {
   $('.topbar').on('click', function(e) {
     $('.dancer').mouseover(function() {
       console.log('mouseover');
-      $( this ).find( 'span.pop' ).show();
+      $( this ).find( 'span.pop' ).show(); //display: block;
       $( this ).find( 'span.pop' ).text( 'PUT OFF' );
     });
 
     $('.dancer').mouseleave(function() {
       console.log('mouseleave');
-      $( this ).find( 'span.pop' ).hide();
+      $( this ).find( 'span.pop' ).hide(); // display: none;
     });
   });
   
