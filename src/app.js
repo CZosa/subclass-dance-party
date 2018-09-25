@@ -58,19 +58,19 @@ var pythagorean = function(dan1, dan2) {
 
 var change = {
   37: {
-    left: "-=2"
+    left: "-=5"
   },
 
   38: {
-    top: "-=2"
+    top: "-=5"
   },
 
   39: {
-    left: "+=2"
+    left: "+=5"
   },
 
   40: {
-    top: "+=2"
+    top: "+=5"
   },
 };
 
