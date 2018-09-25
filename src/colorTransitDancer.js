@@ -16,10 +16,8 @@ colorDancer.prototype.step = function() {
 
   Dancer.prototype.step.call(this);
 
-  if ( this.$node.css('color', 'red') ) {
-    this.$node.css('transition', '3s');
-    this.$node.css('color', 'blue'), 100000;
-  }
+  this.$node.css('transition', '3s');
+  this.$node.css('color', 'blue');
   
   // this.$node.animate({'border-width': '30px'});
 };

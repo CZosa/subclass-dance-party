@@ -1,9 +1,7 @@
 $(document).ready(function() {
   window.dancers = [];
 
-  $('.addDancerButton').on('click', function(event) { 
-
-/* This function sets up
+  $('.addDancerButton').on('click', function(event) { /* This function sets up
   the click handlers for the create-dancer  * buttons on dancefloor.html. You
   should only need to make one small change to it.  * As long as the "data-
   dancer-maker-function-name" attribute of a  * class="addDancerButton" DOM
@@ -81,18 +79,10 @@ $(document).ready(function() {
     var dancerArr = window.dancers;
     for ( var i = 0; i < dancerArr.length; i++ ) {
       var dancer = dancerArr[i].$node;
-      console.log(dancer);
       goLeft(dancer);
     }
     
   });
-
-
-  var goLeft = function(dancer) {
-    var style = {
-      'top': '80%'
-    };
-    dancer.css(style); 
-  };
+  
 });
 
