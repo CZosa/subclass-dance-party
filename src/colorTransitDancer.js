@@ -15,14 +15,9 @@ colorDancer.prototype.constructor = colorDancer;
 colorDancer.prototype.step = function(){
 
   Dancer.prototype.step.call(this);
-  this.$node.css('transition', '5s');
-  var style = {
-  	top: 0,
-  	bottom: 0,
-  	left: 0,
-  	right: 0
-  }
-  this.$node.animate(style, 'fast');
-  
+  // this.$node.css('transition', '5s');
+
+  this.$node.animate({'border-width': '20px'}, 'slow');
+
 
 };
