@@ -1,8 +1,8 @@
-var colorTransitDancer = function(top, left, timeBetweenSteps){
+var colorTransitDancer = function(top, left, timeBetweenSteps) {
   return new colorDancer(top, left, timeBetweenSteps);
 };
 
-var colorDancer = function(top, left, timeBetweenSteps){
+var colorDancer = function(top, left, timeBetweenSteps) {
   //get basic informations about old version of dancer
 
   Dancer.apply(this, arguments);
@@ -12,17 +12,14 @@ var colorDancer = function(top, left, timeBetweenSteps){
 colorDancer.prototype = Object.create(Dancer.prototype);
 colorDancer.prototype.constructor = colorDancer;
 
-colorDancer.prototype.step = function(){
+colorDancer.prototype.step = function() {
 
   Dancer.prototype.step.call(this);
-  this.$node.css('transition', '5s');
-  var style = {
-  	top: 0,
-  	bottom: 0,
-  	left: 0,
-  	right: 0
-  }
-  this.$node.animate(style, 'fast');
-  
 
+  if ( this.$node.css('color', 'red') ) {
+    this.$node.css('transition', '3s');
+    this.$node.css('color', 'blue'), 100000;
+  }
+  
+  // this.$node.animate({'border-width': '30px'});
 };
