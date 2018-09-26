@@ -55,6 +55,15 @@ var pythagorean = function(dan1, dan2) {
     return Math.sqrt(Math.pow(Math.abs(dancerOneLeft - dancerTwoLeft), 2) + Math.pow(Math.abs(dancerOneTop - dancerTwoTop), 2));
 };
 
+function getRandomInt( min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min; 
+}
+
+const colorTable = ['red', 'blue', 'black', 'green'];
+
+// var collision = false;
 
 var change = {
   37: {

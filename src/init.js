@@ -31,7 +31,7 @@ $(document).ready(function() {
     $('.innerbox').append(dancer.$node);
     window.dancers.push(dancer);
     // console.log(dancer.$node);
-    console.log('Here comes a new Dancer');
+    // console.log('Here comes a new Dancer');
 
   });
 
@@ -50,7 +50,7 @@ $(document).ready(function() {
     );
     $('.innerbox').append(dancer.$node);
     window.dancers.push(dancer);
-    console.log('Here comes a new colorTransitDancer');
+    // console.log('Here comes a new colorTransitDancer');
   });
 
 
@@ -69,7 +69,7 @@ $(document).ready(function() {
     );
     $('.innerbox').append(dancer.$node);
     window.dancers.push(dancer);
-    console.log('Here comes a new dancer going to the right');
+    // console.log('Here comes a new dancer going to the right');
   });
 
 
@@ -103,16 +103,89 @@ $(document).ready(function() {
   
   $('.topbar').on('click', function(e) {
     $('.dancer').mouseover(function() {
-      console.log('mouseover');
+      // console.log('mouseover');
       $( this ).find( 'span.pop' ).show(); //display: block;
       $( this ).find( 'span.pop' ).text( 'PUT OFF' );
     });
 
     $('.dancer').mouseleave(function() {
-      console.log('mouseleave');
+      // console.log('mouseleave');
       $( this ).find( 'span.pop' ).hide(); // display: none;
     });
   });
+  
+  var paired = [];
+  
+  $('.dance-button').on('click', function() {
+    console.log(paired);
+    // console.log('click!');
+    var wholeArr = dancerDistance(window.dancers);
+    for (var i = 0; i < wholeArr.length; i++) {
+      if ( wholeArr[i].distance < 100 && !paired.includes(wholeArr[i].distance) ) { 
+        $('.foul').show();
+        paired.push(wholeArr[i].distance);
+        
+        console.log(wholeArr[i]);
+        
+        var origin = wholeArr[i].pair[0].$node;
+        // console.log(origin);
+        var particles = `<div class="re-parents">
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                          <span class="parts"></span>
+                        </div>`;
+        origin.append(particles);
+        //origin.find('.re-parents').css('position', 'relative');
+        origin.find('.parts').show();
+        origin.find('.parts').each(function() {
+          $(this).css('background', colorTable[getRandomInt(0, 4)]);
+          var left = getRandomInt(-1000, 1000);
+          var top = getRandomInt(-500, 1000);
+          var eachAct = {
+            'left': left,
+            'top': top
+          };
+          $(this).animate(eachAct, 'slow');
+          $(this).hide(1000);
+          // collision = true;
+          // origin = undefined;
+        });
+        
+        
+      }
+    }
+
+    origin.find('.parts').each(function() {
+      var eachAct = {
+        'left': 0,
+        'top': 0
+      };
+      $(this).css(eachAct);
+      // collision = true;
+      // origin = undefined;
+    });
+    
+    origin = undefined;
+    $('.foul').fadeOut(2500);
+  });
+  
   
 });
 

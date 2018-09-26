@@ -81,17 +81,17 @@ body, a:link, a:visited, a:active{
   left: -60px;
 }
 .pop::after{
-    content: '';
-    display: block;
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-top: 15px solid transparent;
-    border-bottom: -1px solid transparent;
-    border-left: 31px solid #fff;
-    bottom: -3px;
-    right: -20px;
-    z-index: 0;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: -1px solid transparent;
+  border-left: 31px solid #fff;
+  bottom: -3px;
+  right: -20px;
+  z-index: 0;
 }
 .ball{
   position: absolute;
@@ -102,4 +102,32 @@ body, a:link, a:visited, a:active{
   background-image: url(img/ball.png);
   background-size: cover;
   background-position: center;
+}
+
+.re-parents{
+  position: relative;
+}
+
+.parts{
+  display: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: red;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.foul{
+    display: none;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 3em;
+    font-weight: bolder;
+    color: #501111;
+    background: #fff;
+    z-index: 10;
+    position: relative;
+    top: 30%;
 }
